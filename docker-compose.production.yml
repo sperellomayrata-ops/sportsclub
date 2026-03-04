@@ -1,0 +1,15 @@
+services:
+  app-blue:
+    restart: always
+
+  app-green:
+    restart: always
+
+  postgres:
+    restart: always
+    ports: !override [] # Força el tancamet dels ports heredats.
+
+  nginx:
+    restart: always
+    ports:
+      - "80:80" # Només NGINX es visible a l'exterior
